@@ -1,5 +1,5 @@
 # Snappler Ror
-## Esta proyecto instala en un Ubuntu 10.04 Desktop
+## Este proyecto instala un entorno de desarrollo completo de Rails 3.16 en un Ubuntu 10.04 Desktop
 
 - RVM
 - Ruby 1.9.3
