@@ -33,9 +33,9 @@ else
   #Modificar el Gemset
   cd $1
   echo -e "\n#Para que no falle el rake\ngem 'therubyracer', '~> 0.9.9'"  >> Gemfile
-  echo -e "\n#Para poder debuggear rails desde Netbeans\ngem 'ruby-debug-ide', '~> 0.4.16'"  >> Gemfile
-  echo -e "gem 'debugger', '~> 1.1.4'" >> Gemfile
-  echo -e "gem 'archive-tar-minitar', '~> 0.5.2'" >> Gemfile
+  echo -e "\n#Para poder debuggear rails desde Netbeans\ngem 'ruby-debug-ide', '0.4.16'"  >> Gemfile
+  echo -e "gem 'debugger', '1.1.4'" >> Gemfile
+  echo -e "gem 'archive-tar-minitar', '0.5.2'" >> Gemfile
 
   bundle install
   
