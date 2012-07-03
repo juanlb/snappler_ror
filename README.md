@@ -35,13 +35,13 @@ Se crea:
 ###Configuración de Netbeans
 Abrir Netbeans.
     Ir a:
-    - Tools - Ruby Platforms
+    Tools - Ruby Platforms
     Seleccionar Plataforma:
-    - Ruby 1.9.3
+    Ruby 1.9.3
     Gem Home:
-    - /home/$USER/.rvm/netbeans-gems
+    /home/$USER/.rvm/netbeans-gems
     Gem Path, dejar SOLO:
-    - $GEM_HOME@global
+    $GEM_HOME@global
 
 ##Uso
 Una vez instalado `Snappler Ror` en el sistema, se va a usar solamente en la `creacion` de nuevo proyectos.
