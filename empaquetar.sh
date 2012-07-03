@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PACKAGE_DIR="test-snp-ror"
+PACKAGE_DIR="snappler-ror-install"
 SOURCE_FILE="snappler-ror-sources.tar"
 INSTALL_FILE="install-snappler-ror.sh"
 
