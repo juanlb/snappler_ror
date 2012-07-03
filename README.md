@@ -34,7 +34,7 @@ Se crea:
 
 ### Configuración de Netbeans
 
-Abrir Netbeans.
+Abrir `Netbeans`.
 
 Ir a:
 - `Tools -> Ruby Platforms`
