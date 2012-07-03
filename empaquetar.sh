@@ -17,7 +17,7 @@ if [ ! -d ~/$PACKAGE_DIR ]; then
 fi
 
 #Si no esta el instaladore de netbeans, lo baja
-if [  -f ./netbeans-6.9.1-ml-ruby-linux.sh ]; then
+if [ ! -f ./netbeans-6.9.1-ml-ruby-linux.sh ]; then
   wget http://download.netbeans.org/netbeans/6.9.1/final/bundles/netbeans-6.9.1-ml-ruby-linux.sh
 fi
 
