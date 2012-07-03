@@ -5,7 +5,7 @@
 - Ruby 1.9.3
 - Lamp-server
 - Gmate (plugin de editor de ruby para Gedit)
-- Netbeans
+- Netbeans 6.9.1 (el último que soporta RoR por defecto)
 
 
 Y crea un script para crear proyectos Rails.
@@ -34,7 +34,7 @@ Se crea:
 
 ### Configuración de Netbeans
 
-Abrir `Netbeans`.
+Abrir `Netbeans 6.9.1`.
 
 Ir a:
 - `Tools -> Ruby Platforms`

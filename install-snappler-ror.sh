@@ -121,7 +121,7 @@ if [  -f ./$SOURCE_FILE ]; then
   rvm use $SNP_RUBY_VERSION
   
   echo -e "\n\n\n\nIMPORTANTE: Configuración de Netbeans"
-  echo -e "Abrir Netbeans YA."
+  echo -e "Abrir Netbeans 6.9.1 YA."
   echo -e "Ir a:\n"
   echo -e "  Tools - Ruby Platforms\n"
   echo -e "Seleccionar Plataforma:\n"

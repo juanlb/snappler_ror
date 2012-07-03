@@ -40,11 +40,6 @@ if [ -f ./.rvmrc ]; then
   #Poner el path del debugger
   sudo cp /etc/snappler_ror/$RUBY_DEBUG_PATCH_FILE $GEM_HOME/gems/ruby-debug-ide-0.4.16/lib/ruby-debug-ide.rb
   sudo chown $USER:$USER $GEM_HOME/gems/ruby-debug-ide-0.4.16/lib/ruby-debug-ide.rb
-  
-  sudo cp /etc/snappler_ror/rails_index_page/index.html ./public
-  sudo cp /etc/snappler_ror/rails_index_page/rails.png ./app/assets/images
-  sudo chown $USER:$USER ./public/index.html
-  sudo chown $USER:$USER ./app/assets/images/rails.png
 
 else
   echo -e "\n\nEl proyecto tiene que tener archivo .rvmrc\n\n"
