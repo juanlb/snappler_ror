@@ -1,0 +1,63 @@
+<h1>Snappler Ror</h1>
+<h2>Esta proyecto instala en un Ubuntu 10.04 Desktop</h2>
+
+<ul>
+<li>RVM</li>
+<li>Ruby 1.9.3</li>
+<li>Lamp-server</li>
+<li>Gmate (plugin de editor de ruby para Gedit)</li>
+<li>Netbeans</li>
+</ul>
+
+<p>Y crea un script para crear proyectos Rails.</p>
+<p>Al ejecutar:</p>
+
+<p><b>snp_rails NOMBRE_APP</b></p>
+
+<p>Se crea:</p>
+
+<ul>
+<li>Gemset de RVM: <b>NOMBRE_APP-gemset</b></li>
+<li>Crea el archivo <b>.rvmrc</b> con <i>rvm use 1.9.3@NOMBRE_APP-gemset</i></li>
+<li>Rails 3.1.6</li>
+<li>Todas las gemas necesarias para que ejecute de primera</li>
+<li><b>set_netbeans-gems.sh</b>: script para que netbeans trabaje con las gemas del gemset</li>
+<li>Instalación y modificación de las gemas para debug en netbeans</li>
+</ul>
+
+<hr/>
+<h2>Instalación</h2>
+
+<ul>
+<li>Bajar el proyecto</li>
+<li>Ejecutar <b>./empaquetar.sh</b> (la primera vez va a bajar la version correcta de Netbeans.)</li>
+<li>Crea el directorio <b>snappler-ror-install</b>, y dentro pone: <b>install-snappler-ror.sh</b> y <b>snappler-ror-sources.tar</b>.</li>
+<li>El directorio creado se puede tarear y distribuir.</li>
+<li>Para instalar, entrar en el directorio y ejecutar: <b>install-snappler-ror.sh</b>. </li>
+<li>Cuando termina todo el proceso, realizar las configuraciones que indica el script sobre Netbeans</li>
+</ul>
+<p>
+<b>Configuración de Netbeans</b><br/>
+  Abrir Netbeans.<br/>
+  Ir a:<br/>
+    Tools - Ruby Platforms<br/>
+  Seleccionar Plataforma:<br/>
+    * Ruby 1.9.3<br/>
+  Gem Home:<br/>
+    * /home/$USER/.rvm/netbeans-gems<br/>
+  Gem Path, dejar SOLO:<br/>
+    * $GEM_HOME@global<br/>
+</p>
+
+<hr/>
+<h2>Uso</h2>
+<p>Una vez instalado <b>Snappler Ror</b> en el sistema, se va a usar solamente en la <b>creacion</b> de nuevo proyectos.</p>
+
+<ul>
+<li>Ejecutar <b>snp_rails NOMBRE_APP</b></li>
+<li>Crea las bases: <i>NOMBRE_APP_production</i>, <i>NOMBRE_APP_test</i>, <i>NOMBRE_APP_development</i> </li>
+<li>Crea el usuario de base de datos <b>NOMBRE_APP_user</b> (pass: <u>NOMBRE_APP_pass</u>), con derechos totales sobre las bases mencionadas.</li>
+<li>Crea el gemset <b>NOMBRE_APP-gemset</b>, e instala ahi <b>Rails 3.1.6</b> y todas las gemas necesarias para que corra y para debug.</li>
+<li>Crea el script <b>set_netbeans-gems.sh</b>, que debe ser ejecutado <b>SIEMPRE, CADA VEZ</b> que se vaya a editar el proyecto en Netbenas.</li>
+<li>El proyecto se puede <b>debuguear</b> en Netbeans desde el inicio, sin necesidad de instalar gems adicionales.</li>
+</ul>
