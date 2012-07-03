@@ -68,7 +68,10 @@ if [  -f ./$SOURCE_FILE ]; then
   #Script para nuevo proyecto rails a /usr/bin
   sudo cp ~/$INSTALL_DIR/snp_rails.sh /usr/bin/snp_rails
   sudo chmod 755 /usr/bin/snp_rails
-  
+
+  #Script para nuevo proyecto rails a /usr/bin
+  sudo cp ~/$INSTALL_DIR/snp_rails_add_debug.sh /usr/bin/snp_rails_add_debug
+  sudo chmod 755 /usr/bin/snp_rails_add_debug
 
   #Gmate para Gedit
   sudo apt-add-repository ppa:ubuntu-on-rails/ppa

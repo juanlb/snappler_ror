@@ -42,7 +42,7 @@ Ir a:
 - Gem Home: `/home/USUARIO/.rvm/netbeans-gems`
 - Gem Path, dejar SOLO: `/home/USUARIO/.rvm/gems/ruby-1.9.3-p194@global`
 
-##Uso
+## Uso
 Una vez instalado `Snappler Ror` en el sistema, se va a usar solamente en la `creacion` de nuevo proyectos.
 
 - Ejecutar `snp_rails NOMBRE_APP`
@@ -52,3 +52,9 @@ Una vez instalado `Snappler Ror` en el sistema, se va a usar solamente en la `cr
 - Crea el script `set_netbeans-gems.sh`, que debe ser ejecutado `SIEMPRE, CADA VEZ` que se vaya a editar el proyecto en Netbenas.
 - El proyecto se puede `debuguear` en Netbeans desde el inicio, sin necesidad de instalar gems adicionales.
 
+## snp_rails_add_debug
+
+Este comando agrega capacidades de debug a un proyecto existente.
+
+- Tiene que tener archivo `.rvmrc`.
+- Crea el script `set_netbeans-gems.sh`
