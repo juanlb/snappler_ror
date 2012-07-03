@@ -1,0 +1,23 @@
+Esta proyecto instala:
+
+* RVM
+* Ruby 1.9.3
+* Lamp-server
+  - Apache
+  - MySQL
+  - PHP
+* Gmate
+* Netbeans
+
+Y crea un script para crear proyectos Rails.
+Al ejecutar:
+
+* snp_rails NOMBRE_APP
+
+Se crea:
+
+* Gemset de RVM: NOMBRE_APP-gemset
+* Rails 3.1.6
+* Todas las gemas necesarias para que ejecute de primera
+* set_netbeanas_gemset.sh: script para que netbeans trabaje con las gemas del gemset
+* Instalación y modificación de las gemas para debug en netbeans
