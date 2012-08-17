@@ -58,3 +58,9 @@ Este comando agrega capacidades de debug a un proyecto existente.
 
 - Tiene que tener archivo `.rvmrc`.
 - Crea el script `set_netbeans-gems.sh`
+
+## Resuelto el debug
+
+Con este articulo:
+
+http://stackoverflow.com/questions/8961367/aptana-3-ruby-debugger-exception-in-debugthread-loop-undefined-method-is-bin

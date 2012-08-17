@@ -29,6 +29,9 @@ if [  -f ./$SOURCE_FILE ]; then
   
   sudo cp $RUBY_DEBUG_PATCH_FILE /etc/snappler_ror
   sudo chmod 644 /etc/snappler_ror/$RUBY_DEBUG_PATCH_FILE
+
+  sudo cp $XML_PRINTER_PATCH_FILE /etc/snappler_ror
+  sudo chmod 644 /etc/snappler_ror/$XML_PRINTER_PATCH_FILE
   
   #Imagenes para rails
   sudo mkdir /etc/snappler_ror/rails_index_page

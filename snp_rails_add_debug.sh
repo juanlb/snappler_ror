@@ -26,8 +26,7 @@ if [ -f ./.rvmrc ]; then
   gem install /etc/snappler_ror/ruby-debug-gems/ruby_core_source-0.1.5.gem -- --with-ruby-include=/$RVM_SRC
   gem install /etc/snappler_ror/ruby-debug-gems/linecache19-0.5.13.gem -- --with-ruby-include=/$RVM_SRC
   gem install /etc/snappler_ror/ruby-debug-gems/ruby-debug-base19-0.11.26.gem -- --with-ruby-include=/$RVM_SRC
-  gem install /etc/snappler_ror/ruby-debug-gems/ruby-debug19-0.11.6.gem -- --with-ruby-include=/$RVM_SRC 
-  
+  gem install /etc/snappler_ror/ruby-debug-gems/ruby-debug19-0.11.6.gem -- --with-ruby-include=/$RVM_SRC   
 
   #Armar el script para cambiar de gemset en Netbeans
   echo -e "#!/bin/bash" > set_netbeans-gems.sh
@@ -40,6 +39,9 @@ if [ -f ./.rvmrc ]; then
   #Poner el path del debugger
   sudo cp /etc/snappler_ror/$RUBY_DEBUG_PATCH_FILE $GEM_HOME/gems/ruby-debug-ide-0.4.16/lib/ruby-debug-ide.rb
   sudo chown $USER:$USER $GEM_HOME/gems/ruby-debug-ide-0.4.16/lib/ruby-debug-ide.rb
+
+  sudo cp /etc/snappler_ror/$XML_PRINTER_PATCH_FILE $GEM_HOME/gems/ruby-debug-ide-0.4.16/lib/ruby-debug/xml_printer.rb
+  sudo chown $USER:$USER $GEM_HOME/gems/ruby-debug-ide-0.4.16/lib/ruby-debug/xml_printer.rb
 
 else
   echo -e "\n\nEl proyecto tiene que tener archivo .rvmrc\n\n"
