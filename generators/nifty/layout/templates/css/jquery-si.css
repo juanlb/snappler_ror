@@ -1,0 +1,52 @@
+div.si label.cabinet {
+    display: block;
+    float: left;
+    height: 26px;
+    overflow: hidden;
+    position: relative;
+    width: 95px;
+    z-index: 3;
+      cursor: pointer;
+}
+div.si label.cabinet input {
+	position: relative;
+	left: -140px;
+	top: 0;
+	height: 100%;
+	width: auto !important;
+	z-index: 2;
+	opacity: 0;
+	-moz-opacity: 0;
+	filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+}
+div.si div.uploadButton {
+	position: relative;
+	float: left;
+}
+div.si div.uploadButton div {
+    background: url("/assets/examinar.png") no-repeat scroll 0 0 transparent;
+    cursor: pointer;
+    height: 25px;
+    left: -93px;
+    position: absolute;
+    width: 91px;
+    z-index: 1;
+
+}
+
+div.si label.selectedFile {
+background-color: #FFFFFF;
+    border: 1px solid #C6C6C6;
+    box-shadow: 2px 2px 2px #C6C6C6;
+    float: left;
+    height: 23px;
+    left: -73px;
+    line-height: 24px;
+    margin-left: -20px;
+    padding-left: 98px;
+    padding-right: 8px;
+    position: relative;
+    display:none;
+    top: 0;
+    width: auto;
+}

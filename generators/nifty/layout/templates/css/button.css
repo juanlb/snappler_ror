@@ -1,0 +1,479 @@
+
+/* BOTONES */
+
+.link-boton
+{
+  color: #FFFFFF;
+  border-radius: 2px 2px 2px 2px;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: bold;
+  padding-top: 4px;
+  padding-right: 15px;
+  padding-bottom: 4px;
+  padding-left: 15px;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 1px 1px rgba(0, 0, 0, 1);
+  width: auto;
+}
+
+.link-boton.without-text{
+  padding-left: 0;
+  padding-right: 15px;
+  padding-bottom: 1px;
+  padding-top: 1px;
+}
+
+input.link-boton
+{
+  float: none;
+  padding: 3px 22px 3px 10px;
+  *padding: 3px 15px 2px;
+}
+
+input.link-boton.without-image{
+padding: 3px 10px;
+}
+
+
+.link-boton:hover
+{
+  -moz-box-shadow: 2px 1px 2px #888;
+  -webkit-box-shadow: 2px 1px 2px #888;
+  box-shadow: 2px 1px 2px #888;
+}
+
+
+.link-boton:focus
+{
+  box-shadow: 0 0 0 1px #FFFFFF inset
+}
+
+
+
+
+.boton-red{
+  background-color: #D14836;
+  border: 1px solid #A51727;
+}
+
+.boton-red:hover{
+  background-color: #A51727;
+  border: 1px solid #A51727;
+}
+
+.boton-green{
+  background-color: #77DD77;
+  border: 1px solid #51D424;
+}
+
+.boton-green:hover{
+  background-color: #50B650;
+  border: 1px solid #50B650;
+}
+
+.boton-blue{
+  background-color: #4D90FE;
+  border: 1px solid #5B74C8;
+}
+
+.boton-blue:hover{
+  background-color: #5B74C8;
+  border: 1px solid #5B74C8;
+}
+
+.boton-graystrong{
+  background-color: #B6B6B6;
+  border: 1px solid #969696;
+}
+
+.boton-graystrong:hover{
+  background-color: #969696;
+  border: 1px solid #969696;
+}
+
+.boton-gray{
+  background-color: #EDEDED;
+  border: 1px solid #C6C6C6;
+  color: #000000 !important;
+  font-weight: normal !important;
+  text-shadow: none !important;
+}
+
+.boton-gray:hover{
+  background-color: #C6C6C6;
+  border: 1px solid #C6C6C6;
+}
+
+.boton-black{
+  background-color: #444444;
+  border: 1px solid #000000;
+}
+
+.boton-black:hover{
+  background-color: #000000;
+  border: 1px solid #000000;
+}
+
+.boton-yellow{
+  background-color: #E7DF01;
+  border: 1px solid #CCCC00;
+}
+
+.boton-yellow:hover{
+  background-color: #CCCC00;
+  border: 1px solid #CCCC00;
+}
+
+
+/************************************************/
+
+.boton-image-edit{
+  background-image: url("/assets/icons-button/EDIT_16x16-32.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 24px;
+}
+
+
+.boton-image-settings{
+  background-image: url("/assets/icons-button/SETTINGS_16x16-32.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 24px;
+}
+
+.boton-image-add{
+  background-image: url("/assets/icons-button/ADD_16x16-32.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 24px;
+}
+
+.boton-image-calculator{
+  background-image: url("/assets/icons-button/CALCULATOR_16x16-32.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 24px;
+}
+
+.boton-image-bookmarks{
+  background-image: url("/assets/icons-button/BOOKMARKS_16x16-32.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 24px;
+}
+
+.boton-image-attachment{
+  background-image: url("/assets/icons-button/ATTACHMENT_16x16-32.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 24px;
+}
+
+.boton-image-chat{
+  background-image: url("/assets/icons-button/CHAT_16x16-32.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 24px;
+}
+
+.boton-image-help{
+  background-image: url("/assets/icons-button/HELP_16x16-32.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 24px;
+}
+
+
+.boton-image-info{
+  background-image: url("/assets/icons-button/INFO_16x16-32.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 24px;
+}
+
+
+.boton-image-notepad{
+  background-image: url("/assets/icons-button/NOTEPAD_16x16-32.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 24px;
+}
+
+
+.boton-image-photo{
+  background-image: url("/assets/icons-button/PHOTO_16x16-32.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 24px;
+}
+
+.boton-image-recycle{
+  background-image: url("/assets/icons-button/RECYCLE_16x16-32.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 24px;
+}
+
+.boton-image-rss{
+  background-image: url("/assets/icons-button/RSS_16x16-32.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 24px;
+}
+
+.boton-image-view{
+  background-image: url("/assets/icons-button/VIEW_16x16-32.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 24px;
+}
+
+.boton-image-email{
+  background-image: url("/assets/icons-button/EMAIL_16x16-32.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 24px;
+}
+
+.boton-image-printer{
+  background-image: url("/assets/icons-button/PRINTER_16x16-32.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 24px;
+}
+
+.boton-image-search{
+  background-image: url("/assets/icons-button/SEARCH_16x16-32.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 24px;
+}
+
+.boton-image-ok{
+  background-image: url("/assets/icons-button/OK_16x16-32.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 24px;
+}
+
+.boton-image-axis{
+  background-image: url("/assets/icons-button/AXIS_16x16-32.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 24px;
+}
+
+.boton-image-back{
+  background-image: url("/assets/icons-button/BACK_16x16-32.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 24px;
+}
+
+.boton-image-arrow-up{
+  background-image: url("/assets/icons-button/ARROW_UP_16x16-32.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 24px;
+}
+
+.boton-image-arrow-right{
+  background-image: url("/assets/icons-button/ARROW_RIGHT_16x16-32.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 24px;
+}
+
+.boton-image-arrow-down{
+  background-image: url("/assets/icons-button/ARROW_DOWN_16x16-32.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 24px;
+}
+
+.boton-image-arrow-left{
+  background-image: url("/assets/icons-button/ARROW_LEFT_16x16-32.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 24px;
+}
+
+
+/************************************************/
+
+
+
+.boton-image-edit-b{
+  background-image: url("/assets/icons-button/EDIT_16x16-32-B.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 24px;
+}
+
+.boton-image-settings-b{
+  background-image: url("/assets/icons-button/SETTINGS_16x16-32-B.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 24px;
+}
+
+.boton-image-add-b{
+  background-image: url("/assets/icons-button/ADD_16x16-32-B.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 24px;
+}
+
+.boton-image-calculator-b{
+  background-image: url("/assets/icons-button/CALCULATOR_16x16-32-B.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 24px;
+}
+
+.boton-image-bookmarks-b{
+  background-image: url("/assets/icons-button/BOOKMARKS_16x16-32-B.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 24px;
+}
+
+.boton-image-attachment-b{
+  background-image: url("/assets/icons-button/ATTACHMENT_16x16-32-B.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 24px;
+}
+
+.boton-image-chat-b{
+  background-image: url("/assets/icons-button/CHAT_16x16-32-B.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 24px;
+}
+
+.boton-image-help-b{
+  background-image: url("/assets/icons-button/HELP_16x16-32-B.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 24px;
+}
+
+
+.boton-image-info-b{
+  background-image: url("/assets/icons-button/INFO_16x16-32-B.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 24px;
+}
+
+
+.boton-image-notepad-b{
+  background-image: url("/assets/icons-button/NOTEPAD_16x16-32-B.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 24px;
+}
+
+
+.boton-image-photo-b{
+  background-image: url("/assets/icons-button/PHOTO_16x16-32-B.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 24px;
+}
+
+.boton-image-recycle-b{
+  background-image: url("/assets/icons-button/RECYCLE_16x16-32-B.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 24px;
+}
+
+.boton-image-rss-b{
+  background-image: url("/assets/icons-button/RSS_16x16-32-B.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 24px;
+}
+
+.boton-image-view-b{
+  background-image: url("/assets/icons-button/VIEW_16x16-32-B.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 24px;
+}
+
+.boton-image-email-b{
+  background-image: url("/assets/icons-button/EMAIL_16x16-32-B.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 24px;
+}
+
+.boton-image-printer-b{
+  background-image: url("/assets/icons-button/PRINTER_16x16-32-B.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 24px;
+}
+
+.boton-image-search-b{
+  background-image: url("/assets/icons-button/SEARCH_16x16-32-B.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 24px;
+}
+
+.boton-image-ok-b{
+  background-image: url("/assets/icons-button/OK_16x16-32-B.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 24px;
+}
+
+.boton-image-axis-b{
+  background-image: url("/assets/icons-button/AXIS_16x16-32-B.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 24px;
+}
+
+.boton-image-back-b{
+  background-image: url("/assets/icons-button/BACK_16x16-32-B.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 24px;
+}
+
+.boton-image-arrow-up-b{
+  background-image: url("/assets/icons-button/ARROW_UP_16x16-32-B.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 24px;
+}
+
+.boton-image-arrow-right-b{
+  background-image: url("/assets/icons-button/ARROW_RIGHT_16x16-32-B.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 24px;
+}
+
+.boton-image-arrow-down-b{
+  background-image: url("/assets/icons-button/ARROW_DOWN_16x16-32-B.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 24px;
+}
+
+.boton-image-arrow-left-b{
+  background-image: url("/assets/icons-button/ARROW_LEFT_16x16-32-B.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 24px;
+}
+

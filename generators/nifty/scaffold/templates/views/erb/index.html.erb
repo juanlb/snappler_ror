@@ -1,0 +1,16 @@
+<%%= ApplicationHelper::flash_message(flash) %>
+
+<%%= form_tag(url_for(:action => "block_action"), :id => "<%= instance_name %>_table_form") do %>
+  <fieldset class="table-inside first">
+    <div id="tables_container"></div>
+    <script>
+      $("#tables_container").ondemand_pagination({
+        element_per_page: <%%= Const::PAGINATION_CONST %>,
+        actual_page: 1,
+        ord: '<%%=  @ord %>',
+        sen: '<%%=  @sen %>',
+        ajax_url: '<%%= url_for(:action => "list") %>'
+      });
+    </script>
+  </fieldset>
+<%% end %>

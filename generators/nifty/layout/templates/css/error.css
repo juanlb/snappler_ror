@@ -1,0 +1,64 @@
+
+p span.error-field  input{
+  background-color: #F3D9D9;
+  border: 1px solid #D20009;
+  box-shadow: 1px 1px 1px #D20009;
+}
+
+p span.error-field textarea{
+  background-color: #F3D9D9;
+  border: 1px solid #D20009;
+  box-shadow: 1px 1px 1px #D20009;
+}
+
+p span.error-field select{
+  background-color: #F3D9D9;
+  border: 1px solid #D20009;
+  box-shadow: 1px 1px 1px #D20009;
+}
+
+div.duallistbox.error-field div.listbox1{
+  background-color: #F3D9D9 !important;
+  border: 1px solid #D20009 !important;
+  box-shadow: 1px 1px 1px #D20009 !important;
+}
+
+div.duallistbox.error-field div.listbox2{
+  background-color: #F3D9D9 !important;
+  border: 1px solid #D20009 !important;
+  box-shadow: 1px 1px 1px #D20009 !important;
+}
+
+
+p.error-field ul.token-input-list-facebook{
+  background-color: #F3D9D9 !important;
+  border: 1px solid #D20009 !important;
+  box-shadow: 1px 1px 1px #D20009 !important;
+}
+
+
+p.error-field ul.token-input-list-facebook li input{
+  background-color: #F3D9D9 !important;
+}
+
+
+p.rte.error-field iframe{
+  background-color: #F3D9D9 !important;
+  border: 1px solid #D20009 !important;
+  box-shadow: 1px 1px 1px #D20009 !important;
+}
+
+p.rte.error-field div.rte-toolbar select{
+  background-color: #FFFFFF;
+  border: 1px solid #C6C6C6;
+  box-shadow: 1px 1px 1px #CCCCCC;
+}
+
+p.file.error-field label.selectedFile{
+  display: block;
+  min-width: 50px;
+  background-color: #F3D9D9 !important;
+  border: 1px solid #D20009 !important;
+  box-shadow: 1px 1px 1px #D20009 !important;
+}
+

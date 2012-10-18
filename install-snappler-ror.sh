@@ -4,8 +4,13 @@ INSTALL_DIR="snappler-ror-sources"
 SOURCE_FILE="snappler-ror-sources.tar"
 CONFIG_FILE="snappler-ror.conf"
 
+#Si se pone en true, no ejecuta comando que hace que el script tarde mucho, es para hacer preubas
+TEST=false
+
 #Instalar LAMP (interesa sobre todo para el MySQL)
-sudo apt-get -y install lamp-server^
+if  ! $TEST ; then
+  sudo apt-get -y install lamp-server^
+fi
 
 #Creo un directorio donde se van a poner los archivos necesarios para la instalación de todo
 #Si existe el tar
@@ -16,7 +21,14 @@ if [  -f ./$SOURCE_FILE ]; then
   cd ~
   cd $INSTALL_DIR 
   tar -xvf $SOURCE_FILE
+
+  #Asignando permisos de ejecucion
   chmod 755 netbeans-6.9.1-ml-ruby-linux.sh
+  chmod 755 _snp_rails_debug_patchs.sh
+  chmod 755 _snp_rails_gemset.sh
+  chmod 755 _snp_rails_netbeans_script.sh
+  chmod 755 _snp_rails_debug_gems.sh
+  chmod 755 _snp_rails_gemset_nifty_custom.sh
    
   
   #Crear el directorio que tiene las versiones de rails y ruby, y el archivo de template
@@ -32,6 +44,28 @@ if [  -f ./$SOURCE_FILE ]; then
 
   sudo cp $XML_PRINTER_PATCH_FILE /etc/snappler_ror
   sudo chmod 644 /etc/snappler_ror/$XML_PRINTER_PATCH_FILE
+
+  sudo cp _snp_rails* /etc/snappler_ror
+  sudo chmod 755 /etc/snappler_ror/_snp_rails*
+
+  sudo cp $XML_PRINTER_PATCH_FILE /etc/snappler_ror
+  sudo chmod 644 /etc/snappler_ror/$XML_PRINTER_PATCH_FILE
+
+  sudo cp $MIGRATE_EASY_FILE /etc/snappler_ror
+  sudo chmod 644 /etc/snappler_ror/$MIGRATE_EASY_FILE
+
+  sudo cp $MODEL_USER_FILE /etc/snappler_ror
+  sudo chmod 644 /etc/snappler_ror/$MODEL_USER_FILE
+
+  sudo cp -R devise /etc/snappler_ror/
+  sudo chmod -R 755 /etc/snappler_ror/devise
+
+  sudo cp -R generators /etc/snappler_ror/
+  sudo chmod -R 755 /etc/snappler_ror/generators
+
+  sudo cp -R images /etc/snappler_ror/
+  sudo chmod -R 755 /etc/snappler_ror/images
+
   
   #Imagenes para rails
   sudo mkdir /etc/snappler_ror/rails_index_page
@@ -72,15 +106,17 @@ if [  -f ./$SOURCE_FILE ]; then
   sudo cp ~/$INSTALL_DIR/snp_rails.sh /usr/bin/snp_rails
   sudo chmod 755 /usr/bin/snp_rails
 
-  #Script para nuevo proyecto rails a /usr/bin
+  #Script para agregar debug a proyecto rails a /usr/bin
   sudo cp ~/$INSTALL_DIR/snp_rails_add_debug.sh /usr/bin/snp_rails_add_debug
   sudo chmod 755 /usr/bin/snp_rails_add_debug
 
+
   #Gmate para Gedit
-  sudo apt-add-repository ppa:ubuntu-on-rails/ppa
-  sudo apt-get update
-  sudo apt-get -y install gedit-gmate
-  
+  if  ! $TEST ; then
+    sudo apt-add-repository ppa:ubuntu-on-rails/ppa
+    sudo apt-get update
+    sudo apt-get -y install gedit-gmate
+  fi
   
   ############################# Paquetes para que funcione rails 3.1.6
   
@@ -88,24 +124,29 @@ if [  -f ./$SOURCE_FILE ]; then
   #Durante: bundle install
   #Mensaje: Installing mysql2 (0.3.11) with native extensions 
   #         Gem::Installer::ExtensionBuildError: ERROR: Failed to build gem native extension.
-  sudo apt-get -y install mysql-client libmysqlclient-dev
-
+  if  ! $TEST ; then
+    sudo apt-get -y install mysql-client libmysqlclient-dev
+  fi
   
   
   ############################ Preparando variables de entorno para RoR y Netbeans
-  [ -s "$HOME/.rvm/scripts/rvm" ] && . "$HOME/.rvm/scripts/rvm"
-  rvm use $SNP_RUBY_VERSION
-  GEM_HOME_TEMP=$GEM_HOME
+  if  ! $TEST ; then
+    [ -s "$HOME/.rvm/scripts/rvm" ] && . "$HOME/.rvm/scripts/rvm"
+    rvm use $SNP_RUBY_VERSION
+    GEM_HOME_TEMP=$GEM_HOME
   
-  ln -s $GEM_HOME@global $HOME/.rvm/netbeans-gems
-  
+    ln -s $GEM_HOME@global $HOME/.rvm/netbeans-gems
+  fi
+
   ############################ Netbeans
   #OpenJDK 6 para Netbeans 6.9.1
-  sudo apt-get -y install openjdk-6-jdk
-  cd ~
-  cd $INSTALL_DIR
-  chmod 755 netbeans-6.9.1-ml-ruby-linux.sh
-  ./netbeans-6.9.1-ml-ruby-linux.sh
+  if  ! $TEST ; then
+    sudo apt-get -y install openjdk-6-jdk
+    cd ~
+    cd $INSTALL_DIR
+    chmod 755 netbeans-6.9.1-ml-ruby-linux.sh
+    ./netbeans-6.9.1-ml-ruby-linux.sh
+  fi
   #Quitar glashfish
   #Aceptar contrato
   #poner punto (.) al directorio para que esté oculto

@@ -1,0 +1,39 @@
+/************************************************************** PAGINACION */
+div.pagination{
+  text-align: left;
+  font-size: 1em;
+}
+
+div.pagination a{
+  padding: 0 3px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+div.pagination a:hover{
+  color: #DD4B39;
+}
+
+
+div.pagination em{
+  background-color: #F5F5F5;
+  font-style: normal;
+  border: 1px solid #C6C6C6;
+  border-radius: 10px 10px 10px 10px;
+  font-weight: bold;
+  padding: 0 3px;
+}
+
+div.pagination a.previous_page{
+
+}
+
+div.pagination a.next_page{
+
+}
+
+div.pagination span.disabled{
+  display: none;
+}
+

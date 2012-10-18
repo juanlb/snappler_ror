@@ -1,0 +1,302 @@
+
+div.form-line-separator{
+  border-bottom: 1px solid #C6C6C6;
+  clear: both;
+  display: block;
+  margin-bottom: 20px;
+  padding-bottom: 6px;
+  width: 100%;
+}
+form{
+  float:left;
+  width:100%;
+}
+
+fieldset{
+  border: 1px solid #C6C6C6;
+  margin-bottom: 10px;
+  padding: 1%;
+  width: 97.85%;
+  float: left;
+  background-color: #f9f9f9;
+  box-shadow: 2px 2px 2px #C6C6C6;
+}
+
+fieldset.autowidth{
+  width: auto;
+}
+
+fieldset.without-border{
+  border: 0 none;
+  margin-bottom: 0;
+  padding: 0;
+  box-shadow: none;
+  background-color: transparent;
+  margin-left: 1%;
+}
+
+
+fieldset legend{
+  border-left: 1px solid #C6C6C6;
+  border-right: 1px solid #C6C6C6;
+  padding: 0 5px;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+fieldset h3{
+  border-bottom: 1px solid #C6C6C6;
+  padding-bottom: 3px;
+  position: relative;
+  top: -10px;
+  margin-bottom: 0;
+  font-size: 1.1em;
+  width: 100%;
+}
+
+fieldset h4{
+    border-bottom: 1px solid #C6C6C6;
+    color: #DD4B39;
+    margin-bottom: 4px;
+    padding-bottom: 2px;
+    position: relative;
+    top: -8px;
+}
+
+fieldset.half{
+  width: 47%;
+  margin-left: 1%;
+}
+
+fieldset.half.first{
+  width: 47%;
+  margin-left: 0;
+}
+
+
+fieldset.half.last{
+  float: right;
+  margin-left: 0;
+  width: 47.5%;
+}
+
+fieldset.table-inside{
+  border: 0 none;
+  padding: 0;
+  box-shadow: 0 0 0 #FFFFFF;
+}
+
+fieldset.half.table-inside{
+  width: 49.1% !important;
+}
+fieldset.quarter.table-inside{
+  width: 24.1% !important;
+}
+fieldset.third.table-inside{
+  width: 32.6% !important;
+}
+fieldset.twothird.table-inside{
+  width: 65.9% !important;
+}
+fieldset.threequarter.table-inside{
+  width: 74.1% !important;
+}
+
+
+fieldset.quarter.first{
+  width: 22%;
+  margin-left: 0;
+}
+
+fieldset.quarter{
+  width: 22%;
+  margin-left: 1%;
+}
+
+fieldset.quarter.last{
+  width: 22%;
+  float: right;
+  margin-left: 0;
+}
+
+fieldset.third.first{
+  width: 30.5%;
+  margin-left: 0;
+}
+
+fieldset.third{
+  width: 30.5%;
+  margin-left: 1%;
+}
+
+fieldset.third.last{
+  width: 30.5%;
+  float: right;
+  margin-left: 0;
+}
+
+
+fieldset.twothird.first{
+  width: 63.8%;
+  margin-left: 0;
+}
+
+fieldset.twothird{
+  width: 63.8%;
+  margin-left: 1%;
+}
+
+fieldset.twothird.last{
+  width: 63.8%;
+  float: right;
+  margin-left: 0;
+}
+
+fieldset.threequarter.first{
+  width: 72%;
+  margin-left: 0;
+}
+
+fieldset.threequarter{
+  width: 72%;
+  margin-left: 1%;
+}
+
+fieldset.threequarter.last{
+  width: 72%;
+  float: right;
+  margin-left: 0;
+}
+
+fieldset.center-screen{
+  float: none;
+  margin: 0 auto;
+}
+
+
+form fieldset p{
+  float: left;
+  width: 100%;
+  margin-bottom: 5px;
+  font-size: 13px;
+}
+
+form fieldset p.button-content{
+  margin-top: 10px;
+}
+
+form fieldset p small{
+  color: #999999;
+  float: left;
+  font-size: 0.89em;
+  width: 40px;
+  margin-left: 3px;
+}
+
+form fieldset p label{
+  float: left;
+  width: 110px;
+}
+
+form fieldset p input{
+  border: 1px solid #C6C6C6;
+  float: left;
+  width: 150px;
+  box-shadow: 1px 1px 1px #CCCCCC;
+}
+
+
+form fieldset p select{
+  background-color: #FFFFFF;
+  border: 1px solid #C6C6C6;
+  float: left;
+  width: 117px;
+  box-shadow: 1px 1px 1px #CCCCCC;
+}
+
+form fieldset p select optgroup{
+  background-color: #D6D6D6;
+}
+
+form fieldset p select option{
+  background-color: #FFFFFF;
+}
+
+form fieldset p textarea{
+  border: 1px solid #C6C6C6;
+  width: 168px;
+  float: left;
+  box-shadow: 1px 1px 1px #CCCCCC;
+}
+
+
+form fieldset p.select-text select{
+  width: 50px;
+}
+
+
+form fieldset p.select-text input{
+  margin-left: 2px;
+  width: 98px;
+}
+
+form fieldset p.file input{
+  border: 0 none;
+  box-shadow: 0 0 0 #FFFFFF;
+  width: auto;
+}
+
+form fieldset p.file label{
+
+}
+
+form fieldset p.checkbox label{
+  margin-bottom: 0;
+  margin-top: -2px;
+  padding-left: 8px;
+}
+
+form fieldset p.radio label{
+  margin-bottom: 0;
+  margin-top: -2px;
+  padding-left: 8px;
+}
+
+form fieldset p.checkbox input{
+  width: 15px;
+}
+
+form fieldset p.radio input{
+  width: 15px;
+}
+
+form p.rte{
+
+}
+
+form p.rte label{
+height: 55px;
+}
+
+form p.rte div.rte-toolbar{
+
+}
+
+
+form p.datepicker input{
+  width: 124px;
+}
+
+form p.datepicker img{
+  margin-left: 5px;
+  margin-top: 0;
+  width: 20px;
+}
+
+
+form p.filter .link-boton{
+  float: left;
+  margin-left: 6px;
+  margin-top: -3px;
+
+}

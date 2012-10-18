@@ -1,0 +1,25 @@
+<%%= ApplicationHelper::flash_message(flash) %>
+
+<%%= form_for <%= item_path :instance_variable => true %> do |f| %>
+<fieldset>
+  <h4>Ver <%%= t(:<%= singular_name %>).capitalize %></h4>
+  <%- for attribute in model_attributes -%>
+    <p>
+      <strong><%%= t(:<%= attribute.name %>).capitalize %>:</strong>
+      <%%= @<%= instance_name %>.<%= attribute.name %> %>
+    </p>
+  <%- end -%>
+
+
+  <div class="form-line-separator"></div>
+  <fieldset class="without-border">
+    <p class="button-content">
+      <%%= link_to "Volver", <%= items_path %>, :class => "link-boton boton-graystrong boton-image-back" %>
+      <%%= link_to "Eliminar", <%= item_path :instance_variable => true %>, :confirm => 'Estas seguro?', :method => :delete, :class => "link-boton boton-red boton-image-delete" %>
+      <%%= link_to "Edición", <%= item_path :instance_variable => true, :action => :edit %>, :class => "link-boton boton-yellow boton-image-edit" %>
+	  <%%= link_to "Agregar Nuevo", <%= item_path :action => :new %>, :class => "link-boton boton-green boton-image-add" %>    
+	</p>
+  </fieldset>
+</fieldset>
+<%% end %>
+

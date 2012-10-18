@@ -1,0 +1,34 @@
+<%%= form_for <%= item_path :instance_variable => true %> do |f| %>
+<%%= f.error_messages %>
+<fieldset>
+  <%% if (@<%= singular_name %>.persisted?) %>
+    <h4>Editar <%%= t(:<%= singular_name %>).capitalize %></h4>
+  <%% else %>
+    <h4>Nuevo <%%= t(:<%= singular_name %>).capitalize %></h4>
+  <%% end %>
+  <%- for attribute in model_attributes -%>
+    <p>
+      <%%= f.label :<%= attribute.name %>, t(:<%= attribute.name %>).capitalize %>
+      <%%= f.<%= attribute.field_type %> :<%= attribute.name %> %>
+    </p>
+  <%- end -%>
+
+
+  <div class="form-line-separator"></div>
+  <fieldset class="without-border">
+    <p class="button-content">
+      <%%= link_to "Volver", <%= items_path %>, :class => "link-boton boton-graystrong boton-image-back" %>
+      <%% if (@<%= singular_name %>.persisted?) %>
+        <%%= link_to "Eliminar", <%= item_path :instance_variable => true %>, :confirm => 'Estas seguro?', :method => :delete, :class => "link-boton boton-red boton-image-delete" %>
+        <%%= link_to "Ver", <%= item_path :instance_variable => true %>, :class => "link-boton boton-blue boton-image-view" %>
+        <%%= f.submit "Guardar", :class => "link-boton boton-green boton-image-edit" %>
+      <%% else %>
+        <%%= f.submit "Crear", :class => "link-boton boton-green boton-image-ok" %>
+      <%% end %>
+      
+    </p>
+  </fieldset>
+</fieldset>
+
+
+<%% end %>

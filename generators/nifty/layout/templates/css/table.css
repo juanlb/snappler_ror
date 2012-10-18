@@ -1,0 +1,124 @@
+
+table.list{
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 10px;
+  box-shadow: 2px 2px 2px #C6C6C6;
+}
+
+
+table.list.control {
+  background-color: #2D2D2D;
+}
+
+table.list.control thead {
+  border: 1px solid #C6C6C6;
+}
+
+
+table.list.control thead tr td{
+  background-color: #2D2D2D;
+  color: #DD4B39;
+  font-weight: bold;
+  padding: 8px 12px 2px;
+  text-align: left;
+}
+
+table.list.control thead tr td.pagination{
+  padding: 0 0 0 5px;
+}
+
+table.list.control thead tr td.desc-lote{
+  padding-right: 0;
+  padding-top: 1px;
+  text-align: right;
+}
+
+table.list.control thead tr td.operations{
+  text-align: right;
+  width: 150px;
+}
+
+
+table.list tbody {
+  border: 1px solid #C6C6C6;
+}
+
+table.list tbody tr{
+  border-bottom: 1px solid #C6C6C6;
+}
+
+table.list thead {
+  border: 1px solid #C6C6C6;
+}
+
+table.list thead tr{
+  background-image: url("/assets/bg01.png");
+}
+
+
+table.list tbody tr.odd{
+  background-color: #F8F8F8;
+}
+
+table.list tbody tr.even{
+  background-color: #FFFFFF;
+}
+
+table.list tbody tr.activa{
+  background-color: #CCEEEE;
+}
+
+table.list tbody tr th{
+  padding: 8px 12px;
+  text-align: left;
+  color: #DD4B39;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+table.list thead tr th a{
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 20px;
+  color: #DD4B39;
+  text-decoration: none;
+}
+
+table.list thead tr th a:hover{
+  text-decoration: underline;
+}
+
+table.list thead tr th a.ord-decrescent{
+  background-image: url("/assets/arrow-up.png");
+}
+
+table.list thead tr th a.ord-ascendant{
+  background-image: url("/assets/arrow-down.png");
+}
+
+table.list thead tr th{
+  border-right: 1px dotted #C6C6C6;
+  padding: 5px 12px;
+}
+
+table.list tbody tr td{
+  border-right: 1px dotted #C6C6C6;
+  padding: 5px 12px;
+}
+
+table.list tbody tr td.align-center{
+  text-align: center;
+}
+
+table.list tbody tr td.clickeable{
+  cursor: pointer;
+}
+
+table.list tbody tr td input.checkbox-table{
+
+}
+
+
+
+

@@ -1,0 +1,38 @@
+span.submenu-boton{
+  display: inline-block;
+}
+
+span.submenu-boton .link-boton{
+  display: block;
+}
+
+span.submenu-boton span.submenu-box{
+  background-color: #FFFFFF;
+  border: 1px solid #C6C6C6;
+  height: auto;
+  opacity: 0.99;
+  position: absolute;
+  display:none;
+}
+
+span.submenu-boton:hover span.submenu-box{
+  display:inline;
+}
+
+
+span.submenu-boton span.submenu-box ul{
+  list-style: none outside none;
+}
+span.submenu-boton span.submenu-box ul li{
+  font-size: 1.1em;
+}
+span.submenu-boton span.submenu-box ul li a{
+  text-decoration: none;
+  display: block;
+  padding: 2px 7px;
+  color: #000000;
+}
+
+span.submenu-boton span.submenu-box ul li a:hover{
+  background-color: #EDEDED;
+}

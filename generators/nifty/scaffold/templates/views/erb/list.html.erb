@@ -1,0 +1,64 @@
+<div class="combo_table" id="tables_container_page_<%%= @page %>" style="display:none;">
+  <table class="list" >
+    <thead>
+      <tr>
+        <th style="width: 15px;"><input class="checkbox-table-all" type="checkbox"/></th>
+        <%- for attribute in model_attributes -%>
+          <th><%%= ApplicationHelper::link_to_with_order(self, t(:<%= attribute.name %>).capitalize, "<%= attribute.name %>", params) %></th>
+
+        <%- end -%>
+        <th style="width: 128px;">&nbsp;</th>
+      </tr>
+	</thead>
+	<tbody>
+      <%% for <%= instance_name %> in @<%= instances_name %> %>
+      <tr class="<%%= cycle('odd', 'even') %>" >
+        <td class="clickeable"><input class="checkbox-table" type="checkbox" name="<%= instances_name %>[]" value="<%%= <%= instance_name %>.id %>"/></td>
+        <%- for attribute in model_attributes -%>
+          <td class="clickeable"><%%= <%= instance_name %>.<%= attribute.name %> %></td>
+        <%- end -%>
+
+        <td class="operations">
+          <%- if action? :show -%>
+            <a href="<%%= url_for(<%= item_path %>) %>" class="link-boton boton-blue boton-image-view without-text">&nbsp;</a>
+          <%- end -%>
+          <%- if action? :edit -%>
+            <a href="<%%= url_for(<%= item_path :action => :edit %>) %>" class="link-boton boton-yellow boton-image-edit without-text">&nbsp;</a>
+          <%- end -%>
+          <%- if action? :destroy -%>
+            <%%= link_to "&nbsp;".html_safe, <%= item_path %>, :confirm => 'Estas seguro?', :method => :delete, :class => "link-boton boton-red boton-image-recycle without-text" %>
+          <%- end -%>
+      </tr>
+      <%% end %>
+
+
+    <table class="list control">
+      <thead>
+        <tr>
+          <td rowspan="2" colspan="4" class="pagination">
+            <div id="pagination_container" class='pagination pagination_container'>
+
+              <%%= will_paginate_custom @<%= instances_name %> %>
+
+            </div>
+
+          </td>
+          <td rowspan="2" class="desc-lote">Acciones por Lote:</td>
+          <td colspan="1" class="operations">
+            <%- if action? :new -%>
+              <a href="<%%= url_for(<%= item_path :action => :new %>) %>" class="link-boton boton-green boton-image-add" >Agregar Nuevo</a>
+            <%- end -%>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="1" class="operations">
+            <a href="javascript:;" onclick='if(confirm("Estas seguro?")){send_table_form("<%= instance_name %>_table_form", "destroy")}' class="link-boton boton-red boton-image-recycle without-text">&nbsp;</a>
+          </td>
+        </tr>
+      </thead>
+    </table>
+
+
+    </tbody>
+  </table>
+</div>

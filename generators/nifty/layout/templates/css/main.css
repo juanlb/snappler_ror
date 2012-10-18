@@ -1,0 +1,391 @@
+*{
+  padding: 0;
+  margin: 0;
+  border: 0;
+  font-family: "Helvetica Neue",Helvetica,Arial,Verdana,sans-serif;
+  font-size: 0.97em;
+}
+html{
+  background-image: url("/assets/bg01.png");
+}
+
+h1{
+  margin-bottom: 10px;
+  font-size: 1.4em;
+}
+h2{
+  margin-bottom: 10px;
+  font-size: 1.3em;
+}
+h3{
+  margin-bottom: 10px;
+  font-size: 1.1em;
+}
+
+a{
+  color: #1133AA;
+}
+
+div.clear_both{
+  clear:both;
+}
+
+/***************************/
+
+
+div#contenedor{
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+div#contenedor div#cabecera{
+  float:left;
+  width:100%;
+  padding-bottom: 4px;
+  background-color: #FFFFFF;
+}
+
+div#contenedor div#cabecera div#paneles{
+  margin-bottom: 7px;
+  float:left;
+  width:100%;
+}
+
+div#contenedor div#cabecera div#paneles div#panel-izq{
+  float:left;
+  background-color: #F5F5F5;
+  background-image: url("/assets/bg01.png");
+  background-repeat: repeat;
+  border-radius: 0 10px 10px 0;
+  float: left;
+  margin-top: 5px;
+  padding: 10px;
+  width: 30%;
+  border: 1px solid #C6C6C6;
+  height: 42px;
+  box-shadow: 2px 2px 2px #C6C6C6;
+}
+
+div#contenedor div#cabecera div#paneles div#panel-izq h1{
+  font-size: 2.5em;
+  margin-bottom: 0;
+  text-shadow: 3px 3px #C6C6C6;
+}
+
+
+div#contenedor div#cabecera div#paneles div#panel-der{
+  background-color: #F5F5F5;
+  background-image: url("/assets/bg01.png");
+  background-repeat: repeat;
+  border-radius: 10px 0 0 10px;
+  float: right;
+  margin-top: 5px;
+  border: 1px solid #C6C6C6;
+  padding: 8px 0 8px 10px;
+  box-shadow: 2px 2px 2px #C6C6C6;
+}
+
+div#contenedor div#cabecera div#paneles div#panel-der h3{
+  float: left;
+  margin-bottom: 4px;
+  width: 100%;
+  font-weight: normal;
+}
+
+div#contenedor div#cabecera div#paneles div#panel-der div.panel-boton{
+  float: left;
+}
+
+div#contenedor div#cabecera div#paneles div#panel-der div.panel-boton a.link-boton{
+  margin-right: 5px;
+}
+
+div#contenedor div#cabecera div#breadcrumbs{
+  background-color: #FFFFFF;
+  background-image: url("/assets/bg01.png");
+  border: 1px solid #C6C6C6;
+  border-radius: 0 10px 10px 0;
+  box-shadow: 2px 2px 2px #C6C6C6;
+  float: left;
+  height: 34px;
+}
+
+div#contenedor div#cabecera div#breadcrumbs span.breadcrumb{
+  background-color: transparent;
+  background-image: url("/assets/breadcrumb-separator.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  float: left;
+  padding-right: 24px;
+}
+
+div#contenedor div#cabecera div#breadcrumbs span.primera{
+
+  border-left: 1px solid #C6C6C6;
+  padding-left: 8px;
+}
+
+div#contenedor div#cabecera div#breadcrumbs span.ultima{
+  background-image: none;
+  border-radius: 0 10px 10px 0;
+  border-right: 1px solid #C6C6C6;
+  padding-right: 8px;
+}
+
+div#contenedor div#cabecera div#breadcrumbs span.breadcrumb span.breadcrumb-content{
+  float: left;
+}
+
+div#contenedor div#cabecera div#breadcrumbs span.inicio span.breadcrumb-content a{
+  padding: 0 !important;
+  height: 32px !important;
+}
+
+
+
+div#contenedor div#cabecera div#breadcrumbs span.breadcrumb span.breadcrumb-content a{
+  float: left;
+  height: 24px;
+  padding-top: 8px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #9E9E9E;
+  text-shadow: 1px 1px 0 #FFFFFF;
+}
+
+div#contenedor div#cabecera div#breadcrumbs span.activa span.breadcrumb-content a{
+  color: #44474F;
+}
+
+
+
+
+
+div#contenedor div#principal{
+  float:left;
+  width:100%;
+  background-color: #F5F5F5;
+  padding-bottom: 15px;
+  background-image: url("/assets/bg01.png");
+  background-repeat: repeat;
+}
+
+div#contenedor div#principal.without-upbar{
+  border-top: 1px solid #C6C6C6;
+}
+
+div#contenedor div#principal div#upbar{
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #C6C6C6;
+  float: left;
+  width: 100%;
+}
+
+
+div#contenedor div#principal div#upbar div#mini-control{
+  background-color: #F5F5F5;
+  border: 1px solid #C6C6C6;
+  border-radius: 10px 0 0 10px;
+  float: right;
+  height: 25px;
+  margin-top: 4px;
+  padding-left: 1%;
+  padding-bottom: 4px;
+  padding-top: 4px;
+  width: 12.8%;
+}
+
+div#contenedor div#principal div#upbar div#mini-control a.link-boton{
+  float: left;
+}
+
+
+div#contenedor div#principal div#upbar ul{
+  float: left;
+  height: 35px;
+  overflow: visible;
+  padding-top: 7px;
+  width: 100%;
+}
+
+div#contenedor div#principal div#upbar ul li{
+  background-color: #2D2D2D;
+  border-radius: 8px 8px 0 0;
+  float: left;
+  list-style: none outside none;
+  margin-left: 0.8%;
+}
+
+div#contenedor div#principal div#upbar ul li:hover{
+  background-color: #5F5F5F;
+}
+
+div#contenedor div#principal div#upbar ul li.activa{
+  background-color: #F5F5F5;
+  border-left: 1px solid #C6C6C6;
+  border-right: 1px solid #C6C6C6;
+  border-top: 1px solid #C6C6C6;
+  background-image: url("/assets/bg01.png");
+  background-repeat: repeat;
+
+}
+
+div#contenedor div#principal div#upbar ul li.activa:hover{
+  background-color: #F5F5F5;
+}
+
+div#contenedor div#principal div#upbar ul li a{
+  float: left;
+  padding: 9px 20px;
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+div#contenedor div#principal div#upbar ul li.activa a{
+  color: #DD4B39;
+  font-weight: bold;
+  text-shadow: 2px 2px 2px #C6C6C6;
+}
+
+
+div#contenedor div#principal div#sidebar{
+  float: left;
+  padding-left: 0.5%;
+  width: 5.5%;
+  margin-top: 15px;
+}
+
+div#contenedor div#principal div#sidebar ul{
+  font-size: 0.8em;
+  list-style: none outside none;
+}
+
+div#contenedor div#principal div#sidebar ul li{
+  float: left;
+  width: 100%;
+}
+
+div#contenedor div#principal div#sidebar ul li.activa{
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #C6C6C6;
+  border-left: 1px solid #C6C6C6;
+  border-radius: 6px 0 0 6px;
+  border-top: 1px solid #C6C6C6;
+  position: relative;
+}
+
+div#contenedor div#principal div#sidebar ul li.activa:hover{
+  background-image:none;
+}
+
+div#contenedor div#principal div#sidebar ul li:hover{
+  background-image: url("/assets/menu-hover.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+
+
+
+div#contenedor div#principal div#sidebar ul li a{
+  float: left;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  text-decoration: none;
+  width: 90%;
+}
+
+div#contenedor div#principal div#sidebar ul li a img{
+  float: left;
+  margin-left: 16px;
+}
+
+div#contenedor div#principal div#sidebar ul li a span{
+  color: #44474F;
+  float: left;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 1px 1px 0 #FFFFFF;
+  width: 100%;
+}
+
+
+div#contenedor div#principal div#contenido{
+  background-color: #FFFFFF;
+  border: 1px solid #C6C6C6;
+  min-height: 320px;
+  float: left;
+  margin-top: 10px;
+  padding: 20px 1.5% 30px;
+  width: 90%;
+  border-radius: 6px 6px 6px 6px;
+  box-shadow: 2px 2px 2px #C6C6C6;
+}
+
+div#contenedor div#principal div#contenido h1{
+  margin-top: 5px;
+}
+
+
+
+div#contenedor div#principal div#contenido.contenido-full{
+  margin-left: 1%;
+  width: 95%;
+  min-height: 0;
+}
+
+
+div#contenedor div#footer{
+  float: left;
+  height: 20px;
+  width: 100%;
+}
+
+
+h4.alert_info {
+background: url("/assets/icn_alert_info.png") no-repeat scroll 10px 10px #B5E5EF;
+    border: 1px solid #77BACE;
+    border-radius: 5px 5px 5px 5px;
+    color: #082B33;
+    display: block;
+    font-size: 14px;
+    margin: 0 0 8px;
+    padding: 10px 0 10px 40px;
+    width: 96%;
+}
+h4.alert_warning {
+    background: url("/assets/icn_alert_warning.png") no-repeat scroll 10px 10px #F5F3BA;
+    border: 1px solid #C7A20D;
+    border-radius: 5px 5px 5px 5px;
+    color: #796616;
+    display: block;
+    font-size: 14px;
+    margin: 0 0 8px;
+    padding: 10px 0 10px 40px;
+    width: 96%;
+}
+h4.alert_error {
+    background: url("/assets/icn_alert_error.png") no-repeat scroll 10px 10px #F3D9D9;
+    border: 1px solid #D20009;
+    border-radius: 5px 5px 5px 5px;
+    color: #7B040F;
+    display: block;
+    font-size: 14px;
+    margin: 0 0 8px;
+    padding: 10px 0 10px 40px;
+    width: 96%;
+}
+h4.alert_success {
+    background: url("/assets/icn_alert_success.png") no-repeat scroll 10px 10px #E2F6C5;
+    border: 1px solid #79C20D;
+    border-radius: 5px 5px 5px 5px;
+    color: #32510F;
+    display: block;
+    font-size: 14px;
+    margin: 0 0 8px;
+    padding: 10px 0 10px 40px;
+    width: 96%;
+}

@@ -1,0 +1,20 @@
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :style=>"margin-top: 30px;") do |f| %>
+  <% devise_error_messages! %>
+  <%= f.error_messages %>
+  <fieldset class="quarter center-screen">
+    <h4>Ingresar</h4>
+    <p>
+      <%= f.label :email, "E-mail" %>
+      <%= f.email_field :email %>
+    </p>
+    <p>
+      <%= f.label :password, "Contraseña" %>
+      <%= f.password_field :password %>
+    </p>
+    <p class="button-content">
+      <%= f.submit "Ingresar", :style=>"margin-left: 110px;", :class=>"link-boton boton-graystrong without-image" %>
+    </p>
+  </fieldset>
+
+<% end %>
+<%=  link_to 'Registrarse', "/users/sign_up" %>

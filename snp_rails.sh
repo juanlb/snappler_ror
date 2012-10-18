@@ -24,45 +24,75 @@ else
   #Instalar la version de ruby
   gem install rails -v $SNP_RAILS_VERSION
 
+  #Estas gemas las pide en la maquina de JLB, pero puede ser por problemas de configuracion
+  #gem install archive-tar-minitar -v 0.5.2
+  #gem install columnize -v 0.3.6
+  #gem install debugger-ruby_core_source - v1.1.3
+  #gem install debugger-linecache -v 1.1.2
+  #gem install debugger -v 1.1.4
+  #gem install ruby-debug-ide -v 0.4.16
+
+
   #Crear el proyecto
   rails new $1 --database=mysql
 
   #Crear el .rvmrc
   echo "rvm $SNP_RUBY_VERSION@$1-gemset" > ./$1/.rvmrc
 
-  #Modificar el Gemset
+  #Path de instalacion
+  PATH_INSTALACION=`pwd`
+
+  #Modificar el Gemset para debug
+  /etc/snappler_ror/_snp_rails_gemset.sh $PATH_INSTALACION/$1
+
+  #Modificar el Gemset para nifty custom
+  /etc/snappler_ror/_snp_rails_gemset_nifty_custom.sh $PATH_INSTALACION/$1
+
   cd $1
-  echo -e "\n#Para que no falle el rake\ngem 'therubyracer', '~> 0.9.9'"  >> Gemfile
-  echo -e "\n#Para poder debuggear rails desde Netbeans\ngem 'ruby-debug-ide', '0.4.16'"  >> Gemfile
-  echo -e "gem 'debugger', '1.1.4'" >> Gemfile
-  echo -e "gem 'archive-tar-minitar', '0.5.2'" >> Gemfile
+
 
   bundle install
+
+  #Para nifty
+  RAKE_SRC_DIR=$(ls -dm ~/.rvm/gems/ruby-1.9.3*global*)
+  RAKE_SRC_DIR=$RAKE_SRC_DIR/bin/rake
+
+  $RAKE_SRC_DIR rails:template LOCATION=/etc/snappler_ror/rails_template_device.rb
+  bundle install
+
+
+  #Easy roles
+  rails g migration add_easy_roles_to_users
+  #Modifico la migracion
+  MIGRATION_FILE=$(ls -dm db/migrate/*easy*)
+
+  sudo cp /etc/snappler_ror/$MIGRATE_EASY_FILE $MIGRATION_FILE
+  sudo chown $USER:$USER $MIGRATION_FILE
+
+  sudo cp /etc/snappler_ror/$MODEL_USER_FILE app/models/user.rb
+  sudo chown $USER:$USER app/models/user.rb
   
   #Instalando Gems locales para debugger
   RVM_SRC_DIR=$(ls -dm ~/.rvm/src/ruby-1.9.3*/)
-  export RVM_SRC=$RVM_SRC_DIR
-  gem install /etc/snappler_ror/ruby-debug-gems/ruby_core_source-0.1.5.gem -- --with-ruby-include=/$RVM_SRC
-  gem install /etc/snappler_ror/ruby-debug-gems/linecache19-0.5.13.gem -- --with-ruby-include=/$RVM_SRC
-  gem install /etc/snappler_ror/ruby-debug-gems/ruby-debug-base19-0.11.26.gem -- --with-ruby-include=/$RVM_SRC
-  gem install /etc/snappler_ror/ruby-debug-gems/ruby-debug19-0.11.6.gem -- --with-ruby-include=/$RVM_SRC  
+  /etc/snappler_ror/_snp_rails_debug_gems.sh $RVM_SRC_DIR
 
 
   #Armar el script para cambiar de gemset en Netbeans
-  echo -e "#!/bin/bash" > set_netbeans-gems.sh
-  echo -e "if [ -d ~/.rvm/netbeans-gems ]; then" >> set_netbeans-gems.sh
-  echo -e " rm ~/.rvm/netbeans-gems" >> set_netbeans-gems.sh
-  echo -e "fi" >> set_netbeans-gems.sh
-  echo -e "ln -s $GEM_HOME ~/.rvm/netbeans-gems" >> set_netbeans-gems.sh
-  chmod 755 set_netbeans-gems.sh
+  /etc/snappler_ror/_snp_rails_netbeans_script.sh $PATH_INSTALACION/$1 $GEM_HOME
 
-  
-  #Poner el path del debugger
-  sudo cp /etc/snappler_ror/$RUBY_DEBUG_PATCH_FILE $GEM_HOME/gems/ruby-debug-ide-0.4.16/lib/ruby-debug-ide.rb
-  sudo chown $USER:$USER $GEM_HOME/gems/ruby-debug-ide-0.4.16/lib/ruby-debug-ide.rb
+  #Aplico patchs
+  /etc/snappler_ror/_snp_rails_debug_patchs.sh $PATH_INSTALACION/$1
 
-  sudo cp /etc/snappler_ror/$XML_PRINTER_PATCH_FILE $GEM_HOME/gems/ruby-debug-ide-0.4.16/lib/ruby-debug/xml_printer.rb
-  sudo chown $USER:$USER $GEM_HOME/gems/ruby-debug-ide-0.4.16/lib/ruby-debug/xml_printer.rb
+  #Agrego los directorios para nifty custom
+  sudo cp -R /etc/snappler_ror/generators lib/
+  sudo chown -R $USER:$USER lib/
+
+  sudo cp -R /etc/snappler_ror/devise app/views
+  sudo chown -R $USER:$USER app/views
+
+  sudo cp -R /etc/snappler_ror/images app/assets/
+  sudo chown -R $USER:$USER app/assets
+
   
   #Agregar index.html con imagen de snappminds
   sudo cp /etc/snappler_ror/rails_index_page/index.html ./public
@@ -77,7 +107,34 @@ else
   sed s/password:/password:\ $db_pass/ config/database_temp.yml > config/database.yml
   rm config/database_temp.yml
   
-  
+  #Modificar archivos de la aplicacion para que funcione con nifty
+  LINEA="ActionView::Base.field_error_proc"
+  if ! grep  "$LINEA" config/environment.rb > /dev/null
+  then
+    sed -i "s0__FILE__)0__FILE__)\n\n#Para dibujar los errores en los formularios de otra forma\nActionView::Base.field_error_proc = Proc.new {|html_tag, instance|\n \"<span class='error-field'>#{html_tag}</span>\".html_safe}0g" config/environment.rb
+  fi
+
+  LINEA="gem 'config.autoload_paths += %W(#{config.root}/lib)"
+  if ! grep  "$LINEA" config/application.rb > /dev/null
+  then
+    sed -i "s0  end0\n    #Configuracion de internalizacion por defecto en Español\n    config.i18n.default_locale = :en\n\n    #Para q cargue bien las cosas de lib\n    config.autoload_paths += %W(#{config.root}/lib)\n  end0g" config/application.rb
+  fi
+
+  #Instalar los layouts de nifty
+  echo ""
+  echo ""
+  echo ""
+  echo ""
+  echo "                          Instalando los layouts de Nifty Scaffolds"
+  echo "                          Dale a todos que YES"
+  echo ""
+  echo ""
+  echo ""
+  echo ""
+
+  rails g nifty:layout 
+
+
   db_prod=$1"_production"
   db_test=$1"_test"
   db_dev=$1"_development"
@@ -89,6 +146,8 @@ else
   mysql -u root -p < config/creacion_bases.sql
   
   echo -e "Debe ejecutar:\n\n    cd $1\n    bundle install\n    rake db:migrate:all"
-  echo -e "\n\nSi desea devise:\n\n    rake rails:template LOCATION=/etc/snappler_ror/$TEMPLATE_FILE\n    rake db:migrate"
+  echo -e "\nPara usar los scaffolds magicos, se empieza asi:"
+  echo -e "\n\n    rails g nifty:scaffold {nombre modelo} {campo:tipo EJ: name:string color:string age:text life:boolean}"
+
 
 fi

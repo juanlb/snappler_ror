@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title><%%= content_for?(:title) ? yield(:title) : "Nombre de Proyecto" %></title>
+
+
+    <%%= stylesheet_link_tag    "main" %>
+    <%%= stylesheet_link_tag    "form" %>
+    <%%= stylesheet_link_tag    "button" %>
+    <%%= stylesheet_link_tag    "table" %>
+    <%%= stylesheet_link_tag    "pagination" %>
+    <%%= stylesheet_link_tag    "error" %>
+    <%%= stylesheet_link_tag    "jquery-ui" %>
+    <%%= stylesheet_link_tag    "elements/submenu-box" %>
+    <%%= stylesheet_link_tag    "elements/duallistbox" %>
+    <%%= stylesheet_link_tag    "elements/jquery-si" %>
+    <%%= stylesheet_link_tag    "elements/token-input-facebook" %>
+    <%%= stylesheet_link_tag    "elements/rte" %>
+
+    <%%= javascript_include_tag "jquery-1-7-1-min" %>
+    <%%= javascript_include_tag "jquery-ui-1-8-18-min" %>
+    <%%= javascript_include_tag "jquery-si" %>
+    <%%= javascript_include_tag "rails" %>
+    <%%= javascript_include_tag "custom-functions-ajax" %>
+    <%%= javascript_include_tag "jquery-ba-bbq" %>
+    <%%= javascript_include_tag "main" %>
+    <%%= javascript_include_tag "submenu-box" %>
+    <%%= javascript_include_tag "table" %>
+    <%%= javascript_include_tag "duallistbox" %>
+    <%%= javascript_include_tag "jquery-tokeninput" %>
+    <%%= javascript_include_tag "jquery-rte" %>
+    <%%= javascript_include_tag "ondemand-pagination" %>
+    <%%= javascript_include_tag "onload" %>
+
+  </head>
+  <body>
+    <div id="contenedor">
+      <div id="cabecera">
+        <div id="paneles">
+          <div id="panel-izq">
+            <h1>Sitio</h1>
+          </div><!-- panel-ize -->
+		  <%% if user_signed_in? %>
+		    <div id="panel-der">
+		      <h3>Hola <strong><%%= "#{current_user.email}" %></strong></h3>
+		      <div class="panel-boton">
+		        <%%= link_to "Salir", destroy_user_session_path, :class => "link-boton boton-black", :method => :delete %>
+		        <a id="submenu_box_configurar" class="link-boton boton-black boton-image-settings" href="#">Configurar</a>
+		        <script>
+		        $("#submenu_box_configurar").submenu_box({button_list : [['Datos de Usuario', '/users/edit']]});
+		        </script>
+		      </div><!-- panel-boton -->
+		    </div>
+		  <%% end %>
+        </div><!-- paneles -->
+        <%% if user_signed_in? %>
+          <div id="breadcrumbs">
+            <%%= ApplicationHelper::get_breadcrumbs(@breadcrumbs) %>
+          </div>
+        <%% end %>
+      </div><!-- cabecera -->
+
+
+      <%% controller_name = controller.controller_name %>
+      <%% action_name = controller.action_name %>
+
+	  <%% if user_signed_in? %>
+		  <div id="principal">
+		    <div id="upbar">
+		      <ul>
+		        <%%= MenuHelper::get_upbar(controller_name ,action_name) %>
+		      </ul>
+		    </div><!-- upbar -->
+		    <div class="clear_both"></div>
+            <%% side_html, is_side = SideBarHelper::get_sidebar(controller_name ,action_name) %>
+			<%%= side_html %>
+  	  <%% else %>
+   		<div id="principal" class="without-upbar">
+      <%% end %>
+
+	  <%% if (!user_signed_in?) || (!is_side) %>
+		<div id="contenido" class="contenido-full" >
+	  <%% else %>
+	    <div id="contenido"  >
+	  <%% end %>
+
+          <%%= yield %>
+
+        </div><!-- contenido -->
+      </div><!-- principal -->
+      <div id="footer"></div><!-- footer -->
+    </div><!-- contenedor -->
+  </body>
+</html>
+
