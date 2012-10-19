@@ -83,12 +83,12 @@ if [  -f ./$SOURCE_FILE ]; then
     curl -L https://get.rvm.io | bash -s stable
 
     #Configuración de RVM
-    if [  -f ~/.bash_login ]; then
+    if [  -f ~/.bash_profile ]; then
       LINE=`tail -1 ~/.bashrc`
-        if [ ! "$LINE" == "source ~/.bash_login" ]; then
+        if [ ! "$LINE" == "source ~/.bash_profile" ]; then
           echo -e "\n" >> ~/.bashrc
           echo "#Agregado por JLB para que funcione RVM" >> ~/.bashrc
-          echo "source ~/.bash_login" >> ~/.bashrc
+          echo "source ~/.bash_profile" >> ~/.bashrc
         fi
     fi
   
@@ -96,7 +96,7 @@ if [  -f ./$SOURCE_FILE ]; then
     sudo apt-get -y install build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion
   
     #Cargar RVM
-    source ~/.bash_login
+    source ~/.bash_profile
 
     #Instalar ree
     rvm install $SNP_RUBY_VERSION  
