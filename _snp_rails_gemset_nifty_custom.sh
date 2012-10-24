@@ -16,7 +16,10 @@ source /etc/snappler_ror/$CONFIG_FILE
     echo -e "\n#Gema para paginar"  >> Gemfile
     echo -e "gem 'will_paginate'"  >> Gemfile
 
-    echo -e "\n#Gema para agregar roles a device"  >> Gemfile
+    echo -e "\n#Gema para agregar devise"  >> Gemfile
+    echo -e "gem 'devise'"  >> Gemfile
+
+    echo -e "\n#Gema para agregar roles a devise"  >> Gemfile
     echo -e "gem 'easy_roles'"  >> Gemfile
   fi
 
