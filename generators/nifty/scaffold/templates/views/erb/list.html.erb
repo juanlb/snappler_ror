@@ -43,15 +43,20 @@
             </div>
 
           </td>
-          <td rowspan="2" class="desc-lote">Acciones por Lote:</td>
+		  <td rowspan="1" class="desc-lote">Paginar cada:</td>
           <td colspan="1" class="operations">
+            <p><%%= select_tag("select_pagination",options_for_select(Const::PAGINATION_ARRAY_OPTION, @epp), :onchange => "javascript:reload_select_pagination(this);") %></p>
+          </td>
+
+		  <td colspan="1" class="operations">
             <%- if action? :new -%>
               <a href="<%%= url_for(<%= item_path :action => :new %>) %>" class="link-boton boton-green boton-image-add" >Agregar Nuevo</a>
             <%- end -%>
           </td>
         </tr>
         <tr>
-          <td colspan="1" class="operations">
+		  <td colspan="1" class="desc-lote">Acciones por Lote:</td>
+          <td colspan="2" class="operations">
             <a href="javascript:;" onclick='if(confirm("Estas seguro?")){send_table_form("<%= instance_name %>_table_form", "destroy")}' class="link-boton boton-red boton-image-recycle without-text">&nbsp;</a>
           </td>
         </tr>

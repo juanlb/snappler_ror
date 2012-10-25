@@ -20,12 +20,13 @@ table.list.control thead tr td{
   background-color: #2D2D2D;
   color: #DD4B39;
   font-weight: bold;
-  padding: 8px 12px 2px;
+  padding: 3px 12px 5px;
   text-align: left;
 }
 
 table.list.control thead tr td.pagination{
   padding: 0 0 0 5px;
+  width: 53%;
 }
 
 table.list.control thead tr td.desc-lote{
@@ -37,6 +38,10 @@ table.list.control thead tr td.desc-lote{
 table.list.control thead tr td.operations{
   text-align: right;
   width: 150px;
+}
+
+table.list.control thead tr td.operations p select{
+  width: 75px;
 }
 
 
@@ -53,7 +58,7 @@ table.list thead {
 }
 
 table.list thead tr{
-  background-image: url("/assets/bg01.png");
+  background-color: #F1F1F1;
 }
 
 

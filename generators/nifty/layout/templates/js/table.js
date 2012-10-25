@@ -6,6 +6,12 @@ $(document).ready(function() {
 });
 
 
+function reload_select_pagination(select){
+	new_url = $.param.querystring(window.location.href, 'epp='+$(select).val());
+	window.location = new_url;
+}
+
+
 function refresh_table_li_functions(){
 
   $("table.list tbody tr td.clickeable").unbind('click');

@@ -6,7 +6,7 @@
   font-size: 0.97em;
 }
 html{
-  background-image: url("/assets/bg01.png");
+	background-color: #F1F1F1;
 }
 
 h1{
@@ -36,34 +36,28 @@ div.clear_both{
 div#contenedor{
   margin: 0 auto;
   overflow: hidden;
+  background-color: #F1F1F1;
 }
 
 div#contenedor div#cabecera{
   float:left;
   width:100%;
   padding-bottom: 4px;
-  background-color: #FFFFFF;
+  background-color: #CCCCCC;
 }
 
 div#contenedor div#cabecera div#paneles{
-  margin-bottom: 7px;
-  float:left;
-  width:100%;
+    float: none;
+    height: 40px;
+    margin-bottom: 7px;
+    width: 100%;
 }
 
 div#contenedor div#cabecera div#paneles div#panel-izq{
-  float:left;
-  background-color: #F5F5F5;
-  background-image: url("/assets/bg01.png");
-  background-repeat: repeat;
-  border-radius: 0 10px 10px 0;
-  float: left;
-  margin-top: 5px;
-  padding: 10px;
-  width: 30%;
-  border: 1px solid #C6C6C6;
-  height: 42px;
-  box-shadow: 2px 2px 2px #C6C6C6;
+    float: left;
+    height: 42px;
+    padding-left: 15px;
+    padding-right: 20px;
 }
 
 div#contenedor div#cabecera div#paneles div#panel-izq h1{
@@ -74,22 +68,17 @@ div#contenedor div#cabecera div#paneles div#panel-izq h1{
 
 
 div#contenedor div#cabecera div#paneles div#panel-der{
-  background-color: #F5F5F5;
-  background-image: url("/assets/bg01.png");
-  background-repeat: repeat;
-  border-radius: 10px 0 0 10px;
-  float: right;
-  margin-top: 5px;
-  border: 1px solid #C6C6C6;
-  padding: 8px 0 8px 10px;
-  box-shadow: 2px 2px 2px #C6C6C6;
+    float: right;
+    margin-top: 9px;
+    padding: 0 0 8px 10px;
 }
 
 div#contenedor div#cabecera div#paneles div#panel-der h3{
-  float: left;
-  margin-bottom: 4px;
-  width: 100%;
-  font-weight: normal;
+    float: none;
+    font-weight: normal;
+    margin-bottom: 4px;
+    padding-right: 10px;
+    width: 100%;
 }
 
 div#contenedor div#cabecera div#paneles div#panel-der div.panel-boton{
@@ -100,64 +89,6 @@ div#contenedor div#cabecera div#paneles div#panel-der div.panel-boton a.link-bot
   margin-right: 5px;
 }
 
-div#contenedor div#cabecera div#breadcrumbs{
-  background-color: #FFFFFF;
-  background-image: url("/assets/bg01.png");
-  border: 1px solid #C6C6C6;
-  border-radius: 0 10px 10px 0;
-  box-shadow: 2px 2px 2px #C6C6C6;
-  float: left;
-  height: 34px;
-}
-
-div#contenedor div#cabecera div#breadcrumbs span.breadcrumb{
-  background-color: transparent;
-  background-image: url("/assets/breadcrumb-separator.png");
-  background-position: right center;
-  background-repeat: no-repeat;
-  float: left;
-  padding-right: 24px;
-}
-
-div#contenedor div#cabecera div#breadcrumbs span.primera{
-
-  border-left: 1px solid #C6C6C6;
-  padding-left: 8px;
-}
-
-div#contenedor div#cabecera div#breadcrumbs span.ultima{
-  background-image: none;
-  border-radius: 0 10px 10px 0;
-  border-right: 1px solid #C6C6C6;
-  padding-right: 8px;
-}
-
-div#contenedor div#cabecera div#breadcrumbs span.breadcrumb span.breadcrumb-content{
-  float: left;
-}
-
-div#contenedor div#cabecera div#breadcrumbs span.inicio span.breadcrumb-content a{
-  padding: 0 !important;
-  height: 32px !important;
-}
-
-
-
-div#contenedor div#cabecera div#breadcrumbs span.breadcrumb span.breadcrumb-content a{
-  float: left;
-  height: 24px;
-  padding-top: 8px;
-  padding-left: 10px;
-  padding-right: 10px;
-  text-decoration: none;
-  font-weight: bold;
-  color: #9E9E9E;
-  text-shadow: 1px 1px 0 #FFFFFF;
-}
-
-div#contenedor div#cabecera div#breadcrumbs span.activa span.breadcrumb-content a{
-  color: #44474F;
-}
 
 
 
@@ -166,9 +97,8 @@ div#contenedor div#cabecera div#breadcrumbs span.activa span.breadcrumb-content 
 div#contenedor div#principal{
   float:left;
   width:100%;
-  background-color: #F5F5F5;
+  background-color: #F1F1F1;
   padding-bottom: 15px;
-  background-image: url("/assets/bg01.png");
   background-repeat: repeat;
 }
 
@@ -176,9 +106,127 @@ div#contenedor div#principal.without-upbar{
   border-top: 1px solid #C6C6C6;
 }
 
+div#contenedor div#principal div#breadcrumbs ul.crumbs{
+list-style: none outside none;
+}
+
+div#contenedor div#principal div#breadcrumbs ul.crumbs li{
+display: inline;
+}
+
+#breadcrumbs {
+
+}
+
+#breadcrumbs ul {
+    list-style: none outside none;
+}
+.crumbs {
+    display: block;
+}
+.crumbs li {
+    display: inline;
+}
+.crumbs li a, .crumbs li a:link, .crumbs li a:visited {
+    color: #666666;
+    display: block;
+    float: left;
+    font-size: 12px;
+    margin-left: -16px;
+    padding: 7px 18px 11px 22px;
+    position: relative;
+    text-decoration: none;
+}
+.crumbs li a {
+    background: url("/assets/bg_crumbs.png") no-repeat scroll 100% 0 transparent;
+    position: relative;
+}
+.crumbs li a.first {
+    padding-left: 10px;
+	margin-left: 0;
+}
+.crumbs li a:hover {
+    background-position: 100% -48px;
+    color: #333333;
+    cursor: pointer;
+}
+.crumbs li.active a, .crumbs li:active a {
+    background-position: 100% -96px;
+    color: #333333;
+}
+.crumbs li.first a span {
+    border-left: 1px solid #D9D9D9;
+    height: 29px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 3px;
+}
+
+
+
+div#panel-izq.sticky{
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    z-index: 21;
+	}
+
+div#panel-der.sticky{
+    position: fixed;
+    width: 100%;
+    z-index: 21;
+	padding: 0 !important;
+	}
+
+
+	div#panel-der.sticky div.panel-boton{
+		float:right !important;
+	}
+
+	.sticky div#upbar{
+    float: none !important;
+    position: fixed;
+    top: 0;
+	z-index: 20;
+	border-bottom: 1px solid #AAAAAA !important;
+	}
+
+	.sticky div#upbar ul{
+	padding-bottom: 7px;
+	padding-top: 0 !important;
+	}
+
+	.sticky div#upbar ul li{
+	border-radius: 0 0 8px 8px !important;
+	}
+	
+	.sticky div#upbar ul li.activa{
+	border-bottom: 1px solid #C6C6C6;
+	border-top: 0 !important;
+	}
+	
+	.sticky div#upbar ul li.activa a{
+		padding: 10px 20px !important;
+	}
+
+	.sticky div#upbar ul li a{
+		padding: 7px 20px !important;
+	}
+
+
+
+	#sidebar ul.sticky{
+    position: fixed;
+    top: 0;
+	top: 60px;
+	}	
+
+
 div#contenedor div#principal div#upbar{
-  background-color: #FFFFFF;
+  background-color: #CCCCCC;
   border-bottom: 1px solid #C6C6C6;
+  height: 42px;
   float: left;
   width: 100%;
 }
@@ -206,7 +254,7 @@ div#contenedor div#principal div#upbar ul{
   float: left;
   height: 35px;
   overflow: visible;
-  padding-top: 7px;
+  padding-top: 8px;
   width: 100%;
 }
 
@@ -223,11 +271,10 @@ div#contenedor div#principal div#upbar ul li:hover{
 }
 
 div#contenedor div#principal div#upbar ul li.activa{
-  background-color: #F5F5F5;
+  background-color: #F1F1F1;
   border-left: 1px solid #C6C6C6;
   border-right: 1px solid #C6C6C6;
   border-top: 1px solid #C6C6C6;
-  background-image: url("/assets/bg01.png");
   background-repeat: repeat;
 
 }
@@ -247,6 +294,7 @@ div#contenedor div#principal div#upbar ul li.activa a{
   color: #DD4B39;
   font-weight: bold;
   text-shadow: 2px 2px 2px #C6C6C6;
+  padding: 9px 20px 9px;
 }
 
 
@@ -260,6 +308,7 @@ div#contenedor div#principal div#sidebar{
 div#contenedor div#principal div#sidebar ul{
   font-size: 0.8em;
   list-style: none outside none;
+  width: 74px;
 }
 
 div#contenedor div#principal div#sidebar ul li{
@@ -274,6 +323,7 @@ div#contenedor div#principal div#sidebar ul li.activa{
   border-radius: 6px 0 0 6px;
   border-top: 1px solid #C6C6C6;
   position: relative;
+  padding-left: 1px;
 }
 
 div#contenedor div#principal div#sidebar ul li.activa:hover{
@@ -319,7 +369,7 @@ div#contenedor div#principal div#contenido{
   min-height: 320px;
   float: left;
   margin-top: 10px;
-  padding: 20px 1.5% 30px;
+  padding: 10px 1.5% 30px;
   width: 90%;
   border-radius: 6px 6px 6px 6px;
   box-shadow: 2px 2px 2px #C6C6C6;

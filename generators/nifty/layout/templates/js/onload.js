@@ -25,19 +25,41 @@ jQuery(function($){
 
 $(document).ready(function() {
 
-
+//Por defecto inicializa los datepicker de clase
   $.datepicker.setDefaults($.datepicker.regional['es']);
   $( ".datepicker" ).datepicker({
     dateFormat: "dd/mm/yy",
     showOn: "both",
-    buttonImage: "images/calendar.png",
+    buttonImage: "/assets/calendar.png",
     buttonImageOnly: true,
     showAnim: "slide"
   });
 
-
+//Por defecto inicializa los de tipo file
   $("input.file").si();
 
+
+//Para q el menu scrolee con waypoint
+	$('.top').addClass('hidden');
+	$.waypoints.settings.scrollThrottle = 30;
+	$('#principal').waypoint(function(event, direction) {
+		if(direction == "up"){
+			$(this).removeClass('sticky');
+			$("#sidebar ul").removeClass('sticky');
+			$("#panel-der").removeClass('sticky');
+			$("#panel-izq").removeClass('sticky');
+		}
+	}, {
+		offset: '0'
+	}).find('#upbar').waypoint(function(event, direction) {
+		if(direction == "down"){
+			$(this).parent().addClass('sticky');
+			$("#sidebar ul").addClass('sticky');
+			$("#panel-der").addClass('sticky');
+			$("#panel-izq").addClass('sticky');
+		}
+		event.stopPropagation();
+	});
 
 
 

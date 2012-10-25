@@ -31,7 +31,9 @@ module Nifty
 
           copy_file 'js/jquery-1-7-1-min.js', "app/assets/javascripts/jquery-1-7-1-min.js"
           copy_file 'js/jquery-ui-1-8-18-min.js', "app/assets/javascripts/jquery-ui-1-8-18-min.js"
-          copy_file 'js/table.js', "app/assets/javascripts/table.js"
+          copy_file 'js/modernizr-custom.js', "app/assets/javascripts/modernizr-custom.js"
+		  copy_file 'js/waypoints-min.js', "app/assets/javascripts/waypoints-min.js"
+		  copy_file 'js/table.js', "app/assets/javascripts/table.js"
           copy_file 'js/onload.js', "app/assets/javascripts/onload.js"
           copy_file 'js/ondemand-pagination.js', "app/assets/javascripts/ondemand-pagination.js"
           copy_file 'js/main.js', "app/assets/javascripts/main.js"

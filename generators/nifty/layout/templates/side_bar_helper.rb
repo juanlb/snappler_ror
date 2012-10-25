@@ -37,9 +37,7 @@ module SideBarHelper
 
     #Hash de activa
     hash_controller = Hash[
-      "horses" => ["menu1", "side1"],
-      "horses/new" => ["menu1","side2"],
-      "horses/show" => ["menu2","side1"]
+      "dogs" => ["menu1", "side1"]
     ]
 
     html = self.generate_sidebar_links(controller,action,hash_sidebar, hash_controller)

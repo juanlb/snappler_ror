@@ -11,6 +11,8 @@ class Const
 
 #--------------------------------------------- PAGINACION
   PAGINATION_CONST = 10
+  PAGINATION_CONST_HIGH = 999999999
+  PAGINATION_ARRAY_OPTION = [[10,10],[25,25],[50,50],["Todos","-1"]]
 #--------------------------------------------------------
 
 end

@@ -20,6 +20,8 @@
 
     <%%= javascript_include_tag "jquery-1-7-1-min" %>
     <%%= javascript_include_tag "jquery-ui-1-8-18-min" %>
+	<%%= javascript_include_tag "waypoints-min" %>
+	<%%= javascript_include_tag "modernizr-custom" %>
     <%%= javascript_include_tag "jquery-si" %>
     <%%= javascript_include_tag "rails" %>
     <%%= javascript_include_tag "custom-functions-ajax" %>
@@ -43,22 +45,16 @@
           </div><!-- panel-ize -->
 		  <%% if user_signed_in? %>
 		    <div id="panel-der">
-		      <h3>Hola <strong><%%= "#{current_user.email}" %></strong></h3>
-		      <div class="panel-boton">
-		        <%%= link_to "Salir", destroy_user_session_path, :class => "link-boton boton-black", :method => :delete %>
-		        <a id="submenu_box_configurar" class="link-boton boton-black boton-image-settings" href="#">Configurar</a>
-		        <script>
-		        $("#submenu_box_configurar").submenu_box({button_list : [['Datos de Usuario', '/users/edit']]});
-		        </script>
-		      </div><!-- panel-boton -->
+				<div class="panel-boton">
+				    <a id="submenu_box_configurar" class="link-boton boton-black boton-image-settings" href="#">Hola <strong><%%= "#{current_user.email}" %></strong></a>
+				    <script>
+				    $("#submenu_box_configurar").submenu_box({button_list : [['Datos de Usuario', '/users/edit'],['Salir', '<%%= destroy_user_session_path %>']]});
+				    </script>
+				</div><!-- panel-boton -->
 		    </div>
 		  <%% end %>
         </div><!-- paneles -->
-        <%% if user_signed_in? %>
-          <div id="breadcrumbs">
-            <%%= ApplicationHelper::get_breadcrumbs(@breadcrumbs) %>
-          </div>
-        <%% end %>
+        
       </div><!-- cabecera -->
 
 
@@ -84,6 +80,10 @@
 	  <%% else %>
 	    <div id="contenido"  >
 	  <%% end %>
+
+	      <%% if user_signed_in? %>
+	        <%%= ApplicationHelper::get_breadcrumbs(@breadcrumbs) %>
+	      <%% end %>
 
           <%%= yield %>
 

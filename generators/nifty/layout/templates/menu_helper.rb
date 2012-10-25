@@ -7,7 +7,7 @@ module MenuHelper
     hash_menu = {
       "menu1" => {
         :label => "Menu 1",
-        :url => "/horses",
+        :url => "/dogs",
         :selected => false
       },
       "menu2" => {
@@ -24,8 +24,7 @@ module MenuHelper
 
     #Hash de activa
     hash_controller = Hash[
-      "horses" => "menu1",
-      "horses/new" => "menu2"
+      "dogs" => "menu1"
     ]
 
     html = self.generate_upbar_links(controller,action,hash_menu, hash_controller)

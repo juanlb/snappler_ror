@@ -63,7 +63,7 @@ module ApplicationHelper
       sentido = "ASC"
       clase = "ord-ascendant"
     end
-    params.delete(:epp)
+    #params.delete(:epp)
     params.delete(:page)
     return view.link_to(label, view.url_for(params.merge(:action => "index", :ord => column, :sen => sentido)), :class => clase)
   end
@@ -71,27 +71,22 @@ module ApplicationHelper
   
   def self.get_breadcrumbs(breadcrumbs)
 
+	zindex = 15
+	html = ""
     if breadcrumbs
-      html = "<span class='breadcrumb inicio primera'>
-              <span class='breadcrumb-content'>
-                <a href='/'><img src='/assets/icons-menu/home-32.png' alt='Home-32'></a>
-              </span>
-            </span>"
+      html = "<div id='breadcrumbs'>
+				<ul class='crumbs'><li class='first'>
+                <a class='first' href='/' style='z-index:#{zindex};'><span></span>Inicio</a>
+            </li>"
 
       for breadcrumb in breadcrumbs
-        html += "<span class='breadcrumb #{(breadcrumbs.last == breadcrumb)? 'activa ultima' : ''}'>
-                <span class='breadcrumb-content'>
-                  <a href='#{breadcrumb.second}'>#{breadcrumb.first}</a>
-                </span>
-              </span>"
+		zindex = zindex - 1
+        html += "<li class='breadcrumb #{(breadcrumbs.last == breadcrumb)? 'active' : ''}'>
+                  <a href='#{breadcrumb.second}' style='z-index:#{zindex};'>#{breadcrumb.first}</a>
+              </li>"
       end
-
-    else
-      html = "<span class='breadcrumb inicio primera activa ultima'>
-              <span class='breadcrumb-content'>
-                <a href='/'><img src='/assets/icons-menu/home-32.png' alt='Home-32'></a>
-              </span>
-            </span>"
+	  html += "<div style='clear:both'></ul>
+	      	</div>"
     end
     return html.html_safe
   end

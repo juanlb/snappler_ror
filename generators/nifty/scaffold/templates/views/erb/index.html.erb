@@ -5,7 +5,7 @@
     <div id="tables_container"></div>
     <script>
       $("#tables_container").ondemand_pagination({
-        element_per_page: <%%= Const::PAGINATION_CONST %>,
+        element_per_page: <%%= @epp %>,
         actual_page: 1,
         ord: '<%%=  @ord %>',
         sen: '<%%=  @sen %>',
