@@ -35,6 +35,9 @@
     <%%= javascript_include_tag "ondemand-pagination" %>
     <%%= javascript_include_tag "onload" %>
 
+    <%%# Agregado por JLB para que no falle el envio de sesion por ajax (method DELETE) %>
+    <%%= csrf_meta_tag %>
+    
   </head>
   <body>
     <div id="contenedor">
@@ -48,7 +51,7 @@
 				<div class="panel-boton">
 				    <a id="submenu_box_configurar" class="link-boton boton-black boton-image-settings" href="#">Hola <strong><%%= "#{current_user.email}" %></strong></a>
 				    <script>
-				    $("#submenu_box_configurar").submenu_box({button_list : [['Datos de Usuario', '/users/edit'],['Salir', '<%%= destroy_user_session_path %>']]});
+				    $("#submenu_box_configurar").submenu_box({button_list : [['Datos de Usuario', '/users/edit'],['Salir', '<%%= destroy_user_session_path %>', 'delete' ]]});
 				    </script>
 				</div><!-- panel-boton -->
 		    </div>
