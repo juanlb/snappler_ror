@@ -11,9 +11,14 @@
       settings.button_element.wrap('<span class="submenu-boton">');
       var list = "<span class='submenu-box' id='submenu-box-2'><ul>";
       for (var i in settings.button_list)
-      {
-        list += "<li><a href='"+settings.button_list[i][1]+"'>"+settings.button_list[i][0]+"</a></li>"
-      }
+        {
+          if (settings.button_list[i][2] == 'delete') {
+            data_method = "data-method='delete'";
+          } else {
+            data_method = "";
+          }        
+            list += "<li><a href='"+settings.button_list[i][1]+"' " + data_method + " >"+settings.button_list[i][0]+"</a></li>"
+        }
       list += "</ul></span>";
       settings.button_element.parent().append(list);
     }
